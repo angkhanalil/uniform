@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List; 
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -37,6 +37,9 @@ public class companyServiceImpl implements companyService   {
     }
 
 
+    //private ww_mas_company companymapping()
+
+
     @Override
     public List<ww_mas_company> findAllCompany() {
         String query = "select * from  WW_MAS_COMPANY WHERE  FLAG_DEL = '0' ";
@@ -44,10 +47,13 @@ public class companyServiceImpl implements companyService   {
         List<ww_mas_company> company = new ArrayList<>();
         ww_mas_company comp = new ww_mas_company();
         
+        
+        
         try{
             cn = this.dataSource.getConnection();
             Statement stmt = cn.createStatement();
             ResultSet res = stmt.executeQuery(query);
+          
             while(res.next()){
                 comp = new ww_mas_company();
                 comp.setId(res.getInt("COMPANY_ID"));
