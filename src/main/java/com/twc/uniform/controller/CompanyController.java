@@ -6,6 +6,7 @@ import com.twc.uniform.entity.ww_mas_company;
 import com.twc.uniform.service.companyService;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/company")
+@CrossOrigin(origins = "http://localhost:3000")
 public class CompanyController {
 
     private final companyService companyService;

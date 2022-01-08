@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService  {
 
 
     @Override
-    public List<ww_mas_employee> findAllByCompany(String companyid) {
+    public List<ww_mas_employee> findAllByCompany(String employee_id) {
      // masEmployeeRepository.findAll(); 
         return masEmployeeRepository.findAll();
     }

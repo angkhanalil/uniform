@@ -11,6 +11,7 @@ public interface MasEmployeeRepository extends JpaRepository<ww_mas_employee,Lon
 
     @Query(value = "SELECT * FROM WW_MAS_EMPLOYEE WHERE FLAG_DEL_EMP = '0'", nativeQuery = true)
     public List<ww_mas_employee> findAll();
-      
+
+         
     
 }

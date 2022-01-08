@@ -6,13 +6,16 @@ import com.twc.uniform.entity.ww_mas_project;
 import com.twc.uniform.service.ProjectService;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/projects")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProjectsController {
     private final ProjectService projectService;
 
@@ -26,7 +29,7 @@ public class ProjectsController {
     }
 
     @GetMapping("/project_company")
-    public ResponseEntity<List<ww_mas_project>> getproject_company(@RequestBody String companyid) {
+    public ResponseEntity<List<ww_mas_project>> getproject_company(@RequestParam String companyid) {
         return ResponseEntity.ok().body(projectService.findProjectsByCompany(companyid));
     }
 
